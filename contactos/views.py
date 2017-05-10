@@ -28,6 +28,7 @@ def agregar(request):
         
     else:
         return render(request, 'agregar.html')
+
     
 def buscar(request):
     query = request.GET.get('q')

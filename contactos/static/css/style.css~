@@ -1,1 +1,10 @@
 
+a
+{
+    color:red;
+}
+
+.contact
+{
+    padding:10px;
+}

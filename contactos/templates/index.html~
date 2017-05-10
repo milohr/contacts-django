@@ -1,13 +1,11 @@
 
-  {% include 'partials/header.html' %}
-  
-  
-  <ul>
+{% include 'partials/header.html' %}  
 {% for contacto in contactos %}
-<li> <a href="/contactos/detalle/{{contacto.id}}">{{contacto.apellido}}</a>: {{contacto.nombre}}</li>
-{% endfor %}
-</ul>
 
-  {% include 'partials/footer.html' %}
+
+ <div class="contact" > <a href="/contactos/detalle/{{contacto.telefono}}">{{contacto.apellido}} - {{contacto.nombre}} </a></div>
+ 
+{% endfor %}
+{% include 'partials/footer.html' %}
 
 

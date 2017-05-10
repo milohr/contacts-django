@@ -1,8 +1,30 @@
   {% include 'partials/header.html' %}
 
-<h1>{{contacto.telefono}}</h1>
-<h2>{{contacto.apellido}} {{contacto.nombre}} </h2>
-<h3> {{contacto.created_at}} </h3>
+  
+  <form action="{%url 'agregar' %}" method="post">
+{% csrf_token %}
+
+    <label for="title">Nombre</label><br/>
+    
+    <input type="text" name="nombre" id="nombre" value="{{contacto.nombre}}"/>
+    <br>
+    
+    <label for="title">Apellido</label><br/>
+    
+    <input type="text" name="apellido" id="apellido" value="{{contacto.apellido}}"/>
+    <br>
+    
+    <label for="title">Telefono</label><br/>
+    
+    <input type="text" name="telefono" id="telefono" value="{{contacto.telefono}}"/>
+    <br>
+
+    <br>
+    <br>
+    
+    <input type="submit" value="Actualizar"/>
+
+</form>
 
   {% include 'partials/footer.html' %}
 

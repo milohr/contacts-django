@@ -1,9 +1,30 @@
   {% include 'partials/header.html' %}
 
+  
+  <form action="{%url 'actualizar' %}" method="post">
+{% csrf_token %}
 
-<h1>{{contacto.apellido}} {{contacto.nombre}} </h1>
-<h2>{{contacto.telefono}}</h2>
-<h3> {{contacto.created_at}} </h3>
+    <label for="title">Nombre</label><br/>
+    
+    <input type="text" name="nombre" id="nombre" value="{{contacto.nombre}}"/>
+    <br>
+    
+    <label for="title">Apellido</label><br/>
+    
+    <input type="text" name="apellido" id="apellido" value="{{contacto.apellido}}"/>
+    <br>
+    
+    <label for="title">Telefono</label><br/>
+    
+    <input type="text" name="telefono" id="telefono" value="{{contacto.telefono}}"/>
+    <br>
+
+    <br>
+    <br>
+    
+    <input type="submit" value="Actualizar"/>
+
+</form>
 
   {% include 'partials/footer.html' %}
 

@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.db.models import Q
+
 from .models import Contacto
 # Create your views here.
 
@@ -14,6 +16,20 @@ def detalles(request, telefono):
     return render(request,'detalle.html',context)
     
 def agregar(request):
+    if(request.method == 'POST'):
+        nombre = request.POST['nombre']
+        apellido = request.POST['apellido']
+        telefono = request.POST['telefono']
+        
+        contacto = Contacto(nombre=nombre, apellido=apellido, telefono=telefono)
+        contacto.save()
+        
+        return redirect('/contactos')
+        
+    else:
+        return render(request, 'agregar.html')
+    
+def actualizar(request):
     if(request.method == 'POST'):
         nombre = request.POST['nombre']
         apellido = request.POST['apellido']
