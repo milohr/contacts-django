@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Contactos Acme</title>
+    <meta content="">
+    <style></style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+  </head>
+  <body>
+  
+   <header> 
+   
+   <h1>Contactos Acme</h1> 
+   <a href="/contactos/agregar"> Agregar nuevo contacto </a>
+   <hr>
+   </header>
+   

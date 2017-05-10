@@ -1,0 +1,30 @@
+
+{% include 'partials/header.html' %}
+
+<form action="{%url 'add' %}" method="post">
+{% csrf_token %}
+
+    <label for="title">Nombre</label><br/>
+    
+    <input type="text" name="nombre" id="nombre"/>
+    <br>
+    
+    <label for="title">Apellido</label><br/>
+    
+    <input type="text" name="apellido" id="apellido"/>
+    <br>
+    
+    <label for="title">Telefono</label><br/>
+    
+    <input type="text" name="telefono" id="telefono"/>
+    <br>
+
+    <br>
+    <br>
+    
+    <input type="submit" value="Agregar"/>
+
+</form>
+
+
+{% include 'partials/footer.html' %}
