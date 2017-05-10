@@ -4,15 +4,20 @@
     <meta content="">
     <style></style>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
   </head>
   <body>
   
-   <header> 
-   
+   <header>    
    <h1>Contactos Acme</h1> 
    <a href="/contactos/agregar"> Agregar nuevo contacto </a>
+   
+   <form action="/contactos/buscar/" method="get">
+{% csrf_token %}
+    <input type="text" name="q" id="busqueda" placeholder="Buscar contactos"/>
+         
+    <input type="submit" value="Buscar"/>
+</form>
    <hr>
    </header>
    

@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.db.models import Q
+
 from .models import Contacto
 # Create your views here.
 
@@ -27,3 +29,10 @@ def agregar(request):
     else:
         return render(request, 'agregar.html')
     
+def buscar(request):
+    query = request.GET.get('q')
+    contactos = Contacto.objects.filter(Q(nombre__icontains=query )|Q( apellido__icontains=query) |Q(telefono__icontains=query))
+   
+    context = {'contactos':contactos}
+    return render(request,'resultados.html',context)
+ 
